@@ -90,6 +90,24 @@ RUN mkdir -p /home/user && \
   #  chmod a+x /usr/local/bin/h2o && \
     chmod a+x /entry-point.sh
 
+#RUN apt-get update
+#RUN apt-get install -y iodbc libiodbc2 libiodbc2-dev
+#RUN apt-get install -y unixodbc-dev
+#RUN apt-get install -y python-pip
+
+RUN python3 -m pip install --upgrade sqlalchemy
+#RUN python3 -m pip install --upgrade "pyodbc>=4"
+
+#ADD ODBCDriver /usr/local/src/ODBCDriver
+
+#ADD exasol_sdk /usr/local/src/exasol_sdk
+#RUN cd /usr/local/src/exasol_sdk && \
+#    python setup.py install
+
+#RUN python -m pip install ipykernel
+
+RUN pip3 install "git+http://github.com/EXASOL/websocket-api.git#egg=exasol-ws-api&subdirectory=python"
+
 WORKDIR /home/user
 EXPOSE 22 4545
 
