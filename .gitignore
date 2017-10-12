@@ -106,3 +106,7 @@ ENV/
 /.idea/
 /out/
 *.iml
+
+jupyter_notebooks/badoo_anti_fraud/*
+
+data/*sv
